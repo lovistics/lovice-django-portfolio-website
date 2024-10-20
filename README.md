@@ -34,30 +34,12 @@ A modern, responsive portfolio website built with Django, featuring an AI-powere
 - **Database:** SQLite (default)
 - **Image Handling:** Django ImageField
 
-## Installation
-
-1. Clone the repository:
+## Clone the repository:
 ```bash
 git clone https://github.com/lovistics/lovice-django-portfolio-website.git
 cd lovice-django-portfolio-website
 ```
 
-2. Create and activate a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies
-
-4. Configure environment variables
-
-5. Run migrations
-
-7. Run the development server
-```bash
-python manage.py runserver
-```
 ## Contributing
 
 1. Fork the repository
