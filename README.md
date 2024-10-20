@@ -1,4 +1,4 @@
-# Lovice Django Portfolio Website
+# My Django Portfolio Website
 
 A modern, responsive portfolio website built with Django, featuring an AI-powered chatbot for interactive portfolio exploration.
 
@@ -9,7 +9,7 @@ A modern, responsive portfolio website built with Django, featuring an AI-powere
   - Skills categorization with proficiency levels
   - Blog posts integration
   - Client testimonials with ratings
-  - Contact form with response tracking
+  - Contact form
 
 - 🤖 **AI Chatbot**
   - Natural language interaction
@@ -48,57 +48,16 @@ python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+3. Install dependencies
 
-4. Configure environment variables:
-   - Copy `.env.example` to `.env`
-   - Update necessary settings (SECRET_KEY, etc.)
+4. Configure environment variables
 
-5. Run migrations:
-```bash
-python manage.py migrate
-```
+5. Run migrations
 
-6. Create a superuser:
-```bash
-python manage.py createsuperuser
-```
-
-7. Run the development server:
+7. Run the development server
 ```bash
 python manage.py runserver
 ```
-
-## Project Structure
-
-```
-portfolio_website/
-├── portfolio/              # Main portfolio app
-│   ├── models.py          # Data models for portfolio content
-│   ├── views.py           # View controllers
-│   ├── templates/         # HTML templates
-│   └── static/            # Static files (CSS, JS, images)
-├── chatbot/               # Chatbot application
-│   └── utils.py           # Chatbot logic and response handling
-└── manage.py              # Django management script
-```
-
-## Usage
-
-1. Access the admin panel at `/admin` to manage:
-   - Portfolio owner information
-   - Projects and skills
-   - Blog posts
-   - Testimonials
-   - Contact messages
-
-2. The chatbot can be customized by modifying the response patterns in `chatbot/utils.py`
-
-3. Update the templates in `portfolio/templates/` to customize the site's appearance
-
 ## Contributing
 
 1. Fork the repository
@@ -113,6 +72,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-Your Name - [@YourTwitter](https://twitter.com/YourTwitter)
+Lovice Ochieng - [@livisticsdev](https://www.linkedin.com/in/lovisticsdev)
 
 Project Link: [https://github.com/lovistics/lovice-django-portfolio-website](https://github.com/lovistics/lovice-django-portfolio-website)
