@@ -72,6 +72,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 
-Lovice Ochieng - [@livisticsdev](https://www.linkedin.com/in/lovisticsdev)
+Lovice Ochieng - [@lovisticsdev](https://www.linkedin.com/in/lovisticsdev)
 
 Project Link: [https://github.com/lovistics/lovice-django-portfolio-website](https://github.com/lovistics/lovice-django-portfolio-website)
