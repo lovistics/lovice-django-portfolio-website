@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero-section">
+    <div class="hero-content">
+        <img src="{% static 'images/profile.jpg' %}" class="profile-img mb-4" alt="Profile Picture">
+        <h1 class="hero-title">
+            <span class="hero-name">{{ owner.owner.get_full_name }}</span>
+            <p class="hero-job-title">Software | Machine Learning Engineer</p>
+        </h1>
+        <div class="hero-social-icons">
+            <a href="https://github.com/{{ owner.owner.username }}" target="_blank" class="hero-social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/{{ owner.owner.username }}dev" target="_blank" class="hero-social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="#contact" class="hero-social-icon"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</section>
+
+<div class="content-container">
+    <!-- Skills Section -->
+    <section id="skills" class="skills container">
+        <h2 class="skills__title text-center mb-5">Skills</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-5 g-4">
+            {% for category in skills %}
+            <div class="col">
+                <div class="skill-card card shadow-sm border-0 h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ category.name }}</h5>
+                        <p class="card-text flex-grow-1">{{ category.description }}</p>
+                        <div class="skills-list-wrapper">
+                            <div class="skills-list">
+                                {% for skill in category.skills.all %}
+                                <div class="skill-item">
+                                    <span class="skill-name">{{ skill.name }}</span>
+                                    <span class="badge skill-level-{{ skill.level|lower }}">
+                                        <i class="bi {{ skill.level|lower }}-icon"></i> 
+                                        {{ skill.level }}
+                                    </span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="projects container bg-light">
+        <h2 class="text-center mb-5">Featured Projects</h2>
+        <div class="row g-4 justify-content-center">
+            {% for project in projects %}
+            <div class="col-md-6 col-lg-4">
+                <div class="project-card card shadow-lg border-0 h-100">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                    {% endif %}
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text flex-grow-1">{{ project.description|truncatewords:20 }}</p>
+                        <a href="{{ project.url }}" class="btn btn-outline-primary mt-auto" target="_blank">View Project</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="https://github.com/{{ owner.owner.username }}" class="btn btn-outline-secondary">More Projects</a>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog container">
+        <h2 class="text-center mb-5">Latest Blog Posts</h2>
+        <div class="row g-4 justify-content-center">
+            {% for post in blog_posts %}
+            <div class="col-md-6 col-lg-4">
+                <div class="blog-card card shadow-sm border-0 h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ post.title }}</h5>
+                        <div class="blog-card-meta mt-2 mb-3">
+                            <div class="blog-date">
+                                <i class="bi bi-calendar"></i>
+                                <span> By {{ post.owner.owner.get_full_name }}, {{ post.publish_date|date:"M d, Y" }}</span>
+                            </div>
+                        </div>
+                        <a href="{{ post.url }}" target="_blank" class="btn btn-primary mt-auto">Read Post</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-5">
+            <a href="https://medium.com/@odongolovis4" class="btn btn-outline-primary btn-lg" target="_blank">View All Posts</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+
+    <section id="testimonials" class="testimonials-section py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">What People Say</h2>
+            <div class="testimonials-carousel">
+                <div class="testimonials-track">
+                    {% for testimonial in testimonials %}
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                            <blockquote>
+                                <p>"{{ testimonial.content }}"</p>
+                            </blockquote>
+                            <div class="testimonial-author">
+                                <div class="testimonial-image">
+                                    <img src="{% static 'images/placeholder-avatar.jpg' %}" alt="{{ testimonial.author }}" class="rounded-circle">
+                                </div>
+                                <div class="testimonial-info">
+                                    <h4 class="author-name">{{ testimonial.author }}</h4>
+                                    <p class="author-title">{{ testimonial.role }}, {{ testimonial.company }}</p>
+                                </div>
+                            </div>
+                            <div class="testimonial-rating">
+                                {% for i in "12345" %}
+                                <i class="fas fa-star {% if i|add:"0" <= testimonial.rating %}active{% endif %}"></i>
+                                {% endfor %}
+                            </div>
+                            <div class="testimonial-date">
+                                <small>{{ testimonial.created_at|date:"F j, Y" }}</small>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-control prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-control next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact container">
+        <h2 class="text-center mb-5">Contact Me</h2>
+        <div class="contact-form-wrapper">
+            <form method="post" novalidate class="needs-validation">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="btn btn-primary mt-3">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Message Sent!</h2>
+        <p>Your message has been sent successfully. I'll get back to you soon!</p>
+        </div>
+    </div>
+    
+    <!-- Error Modal -->
+    <div id="error-modal" class="modal">
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Message Failed</h2>
+        <p>There was an error sending your message. Please try again.</p>
+        <ul class="error-list"></ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
