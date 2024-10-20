@@ -37,7 +37,6 @@ A modern, responsive portfolio website built with Django, featuring an AI-powere
 ## Clone the repository:
 ```bash
 git clone https://github.com/lovistics/lovice-django-portfolio-website.git
-cd lovice-django-portfolio-website
 ```
 
 ## Contributing
