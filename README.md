@@ -5,24 +5,24 @@ A modern, responsive portfolio website built with Django, featuring an AI-powere
 ## Features
 
 - 🎯 **Dynamic Portfolio Management**
-  - Projects showcase with images and descriptions
-  - Skills categorization with proficiency levels
-  - Blog posts integration
-  - Client testimonials with ratings
-  - Contact form
+  - Showcase projects with images and detailed descriptions
+  - Categorize skills with proficiency levels
+  - Integrate blog posts seamlessly
+  - Display client testimonials with ratings
+  - Include a contact form for inquiries
 
 - 🤖 **AI Chatbot**
-  - Natural language interaction
-  - Intelligent portfolio information retrieval
-  - Context-aware responses
-  - Comprehensive query handling for projects, skills, and contact information
+  - Engage with natural language interaction
+  - Retrieve portfolio information intelligently
+  - Provide context-aware responses
+  - Handle comprehensive queries about projects, skills, and contact information
 
 - 💼 **Professional Presentation**
-  - Clean, modern UI design
-  - Responsive layout for all devices
-  - Social media integration
-  - Testimonials carousel
-  - Dynamic content loading
+  - Clean and modern UI design
+  - Responsive layout optimized for all devices
+  - Social media integration for broader outreach
+  - Dynamic testimonials carousel
+  - Efficient dynamic content loading
 
 ## Technical Stack
 
@@ -34,22 +34,34 @@ A modern, responsive portfolio website built with Django, featuring an AI-powere
 - **Database:** SQLite (default)
 - **Image Handling:** Django ImageField
 
-## Clone the repository:
+## Clone the Repository
+
+To clone this repository, run:
+
 ```bash
 git clone https://github.com/lovistics/lovice-django-portfolio-website.git
 ```
 
 ## Contributing
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+1. Fork the repository.
+2. Create your feature branch:
+   ```bash
+   git checkout -b feature/AmazingFeature
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m 'Add some AmazingFeature'
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature/AmazingFeature
+   ```
+5. Open a Pull Request.
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the [MIT License](LICENSE) - see the LICENSE file for details.
 
 ## Contact
 
