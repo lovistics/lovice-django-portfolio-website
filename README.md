@@ -30,7 +30,6 @@ A modern, responsive portfolio website built with Django, featuring an AI-powere
 - **Frontend:** HTML5, CSS3, JavaScript
 - **CSS Framework:** Bootstrap 4
 - **Form Handling:** django-crispy-forms
-- **Tagging System:** django-taggit
 - **Database:** SQLite (default)
 - **Image Handling:** Django ImageField
 
